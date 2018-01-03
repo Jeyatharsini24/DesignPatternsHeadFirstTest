@@ -1,0 +1,5 @@
+Strategy : I don't like to have empty overriding methods just because I am going to introduce a new feature for some existing things
+Eg: Flying feature for Duck
+
+Observer : Observe on changes for one to many relationship
+Eg: Overview, publisher-subscriber
