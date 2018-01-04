@@ -9,13 +9,15 @@ public class ForecastDisplay implements DisplayElement, Observer {
 	private double nextPressure;
 
 	@Override
-	public void update() {
-
-		foreCast();
+	public void update(double temp, double humidity, double pressure) {
+		currentHumidity = humidity;
+		currentPressure = pressure;
+		currentTemperature = temp;
 	}
 
 	@Override
 	public void display() {
+		foreCast();
 		System.out.println("Next Humidity : " + nextHumidity);
 		System.out.println("Next Temperature : " + nextTemperature);
 		System.out.println("Next Pressure : " + nextPressure);
