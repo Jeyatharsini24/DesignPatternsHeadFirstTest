@@ -3,3 +3,7 @@ Eg: Flying feature for Duck
 
 Observer : Observe on changes for one to many relationship
 Eg: Overview, publisher-subscriber
+
+Decorator : kind of wrappers, add features dynamically
+Eg: Coffee, Milk, Soy
+
