@@ -3,7 +3,17 @@ Eg: Flying feature for Duck
 
 Observer : Observe on changes for one to many relationship
 Eg: Overview, publisher-subscriber
+Event Listeners in java
 
 Decorator : kind of wrappers, add features dynamically
 Eg: Coffee, Milk, Soy
+Streams in Java
 
+Factory : encapsulate object creation
+Eg: Pizza with type
+
+Factory method : allowing sub classes to decide object creation
+Eg: Pizza with type and place
+
+AbstractFactory : an interface for creating family of products
+Eg: Pizza ingredients factory
