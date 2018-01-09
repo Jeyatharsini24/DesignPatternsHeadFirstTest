@@ -17,3 +17,9 @@ Eg: Pizza with type and place
 
 AbstractFactory : an interface for creating family of products
 Eg: Pizza ingredients factory
+
+Singleton : Only on instance
+Eg: Chocalate factory
+
+Command : encapsulates request as an object ==> separate request from receiver and invoker
+Eg: log requests, queue, undo
