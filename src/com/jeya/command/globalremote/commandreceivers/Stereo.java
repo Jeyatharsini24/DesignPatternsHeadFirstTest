@@ -1,17 +1,17 @@
 package com.jeya.command.globalremote.commandreceivers;
 
-public class CDPlayer
+public class Stereo
 {
   private String name;
 
-  public CDPlayer(String name)
+  public Stereo(String name)
   {
     this.name = name;
   }
 
-  public void play()
+  public void setVolume(int volume)
   {
-    System.out.println(name + " is playing");
+    System.out.println(name + "'s volume is " + volume);
   }
 
   public void on()
@@ -27,5 +27,10 @@ public class CDPlayer
   public void off()
   {
     System.out.println(name + " is switched off");
+  }
+
+  public void setCD()
+  {
+    System.out.println("CD is set to " + name);
   }
 }

@@ -2,20 +2,55 @@ package com.jeya.command.globalremote.commandreceivers;
 
 public class CeilingFan
 {
-  private String name;
+  private String location;
+  public static final int HIGH = 3;
+  public static final int MEDIUM = 2;
+  public static final int LOW = 1;
+  public static final int OFF = 0;
+  private int speed;
 
-  public CeilingFan(String name)
+  public CeilingFan(String location)
   {
-    this.name = name;
+    this.location = location;
+    this.speed = OFF;
   }
 
   public void on()
   {
-    System.out.println(name + " is switched on");
+    System.out.println(location + "'s fan is switched on");
+  }
+  
+  public int getSpeed()
+  {
+    return speed;
   }
 
   public void off()
   {
-    System.out.println(name + " is switched off");
+    speed = OFF;
+    displaySpeed();
+  }
+  
+  public void high()
+  {
+    speed = HIGH;
+    displaySpeed();
+  }
+  
+  public void medium()
+  {
+    speed = MEDIUM;
+    displaySpeed();
+  }
+  
+  public void low()
+  {
+    speed = LOW;
+    displaySpeed();
+  }
+  
+  private void displaySpeed()
+  {
+    System.out.println("Speed is set to " + speed);
   }
 }

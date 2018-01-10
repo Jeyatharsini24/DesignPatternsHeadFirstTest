@@ -1,12 +1,12 @@
 package com.jeya.command.globalremote.commands;
 
-import com.jeya.command.globalremote.commandreceivers.CDPlayer;
+import com.jeya.command.globalremote.commandreceivers.Stereo;
 
 public class StereoOnForCDCommand implements Command
 {
-  private CDPlayer cdPlayer;
+  private Stereo cdPlayer;
 
-  public StereoOnForCDCommand(CDPlayer cdPlayer)
+  public StereoOnForCDCommand(Stereo cdPlayer)
   {
     this.cdPlayer = cdPlayer;
   }
@@ -15,6 +15,14 @@ public class StereoOnForCDCommand implements Command
   public void execute()
   {
     cdPlayer.on();
-    cdPlayer.play();
+    cdPlayer.setCD();
+    cdPlayer.setVolume(11);
+  }
+
+  @Override
+  public void undo()
+  {
+    cdPlayer.stop();
+    cdPlayer.off();
   }
 }

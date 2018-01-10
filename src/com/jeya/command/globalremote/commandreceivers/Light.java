@@ -12,4 +12,9 @@ public class Light
   {
     System.out.println(name + " light is switched on!!");
   }
+
+  public void off()
+  {
+    System.out.println(name + " light is switched off!!");
+  }
 }

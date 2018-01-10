@@ -2,13 +2,13 @@ package com.jeya.command.globalremote.commands;
 
 import com.jeya.command.globalremote.commandreceivers.CeilingFan;
 
-public class CeilingFanOffCommand implements Command
+public class CeilingFanLowCommand implements Command
 {
   private CeilingFan ceilingFan;
-  
+
   private int prevSpeed;
 
-  public CeilingFanOffCommand(CeilingFan ceilingFan)
+  public CeilingFanLowCommand(CeilingFan ceilingFan)
   {
     this.ceilingFan = ceilingFan;
   }
@@ -17,25 +17,25 @@ public class CeilingFanOffCommand implements Command
   public void execute()
   {
     prevSpeed = ceilingFan.getSpeed();
-    ceilingFan.off();
+    ceilingFan.low();
   }
 
   @Override
   public void undo()
   {
-    if(prevSpeed == CeilingFan.HIGH)
+    if (prevSpeed == CeilingFan.HIGH)
     {
       ceilingFan.high();
     }
-    else if(prevSpeed == CeilingFan.MEDIUM)
+    else if (prevSpeed == CeilingFan.MEDIUM)
     {
       ceilingFan.medium();
     }
-    else if(prevSpeed == CeilingFan.LOW)
+    else if (prevSpeed == CeilingFan.LOW)
     {
       ceilingFan.low();
     }
-    else if(prevSpeed == CeilingFan.OFF)
+    else if (prevSpeed == CeilingFan.OFF)
     {
       ceilingFan.off();
     }

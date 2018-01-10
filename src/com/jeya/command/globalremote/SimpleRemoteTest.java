@@ -7,7 +7,7 @@ import com.jeya.command.globalremote.commands.GarageDoorOpenCommand;
 import com.jeya.command.globalremote.commands.LightOnCommand;
 import com.jeya.command.globalremote.invoker.SimpleRemoteControl;
 
-public class GlobalRemote
+public class SimpleRemoteTest
 {
   public static void main(String[] args)
   {
