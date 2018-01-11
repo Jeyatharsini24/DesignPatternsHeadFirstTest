@@ -25,3 +25,4 @@ Command : encapsulates request as an object ==> separate request from receiver a
 Eg: log requests, queue, undo
 
 Adapter : converts a class as client expect(two different people: broker in middle)
+Eg: Turkey as duck, enumeration -> iterator

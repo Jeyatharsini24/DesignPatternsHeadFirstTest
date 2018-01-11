@@ -1,4 +1,4 @@
-package com.jeya.adapter.pool;
+package com.jeya.adapter;
 
 import com.jeya.adapter.pool.ducks.Duck;
 import com.jeya.adapter.pool.ducks.MallardDuck;
