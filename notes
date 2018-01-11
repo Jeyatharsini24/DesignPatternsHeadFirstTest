@@ -26,3 +26,6 @@ Eg: log requests, queue, undo
 
 Adapter : converts a class as client expect(two different people: broker in middle)
 Eg: Turkey as duck, enumeration -> iterator
+
+Facade: unified interface for subsystem : principle of least knowledge
+Eg: Home theater
