@@ -35,3 +35,6 @@ Eg: Coffee or tea making, general sorting with comparable, Swing paint method, A
 
 Iterator : access aggregated object without exposing underlying implementation : single responsibility - a class should have only one reason to change
 Eg: Merging menus with list, array and hashtable
+
+Composite : let clients to treat individual objects and compositions of objects uniformly (tree like structure)
+Eg: Submenu in menu

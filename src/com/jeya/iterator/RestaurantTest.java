@@ -1,4 +1,4 @@
-package com.jeya.iterator.objectvillerestaurant;
+package com.jeya.iterator;
 
 import com.jeya.iterator.objectvillerestaurant.util.Waitress;
 
