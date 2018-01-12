@@ -1,5 +1,7 @@
 package com.jeya.iterator.objectvillerestaurant.util;
 
+import java.util.Iterator;
+
 import com.jeya.iterator.objectvillerestaurant.menu.MenuItem;
 
 public class DinerMenuIterator implements Iterator<MenuItem>

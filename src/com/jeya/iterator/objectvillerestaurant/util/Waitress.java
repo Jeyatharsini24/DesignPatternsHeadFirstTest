@@ -1,20 +1,33 @@
 package com.jeya.iterator.objectvillerestaurant.util;
 
-import com.jeya.iterator.objectvillerestaurant.menu.DinnerMenu;
+import java.util.Iterator;
+
+import com.jeya.iterator.objectvillerestaurant.menu.CafeMenu;
+import com.jeya.iterator.objectvillerestaurant.menu.DinerMenu;
+import com.jeya.iterator.objectvillerestaurant.menu.Menu;
 import com.jeya.iterator.objectvillerestaurant.menu.MenuItem;
 import com.jeya.iterator.objectvillerestaurant.menu.PancakeHouseMenu;
 
 public class Waitress
 {
-  private PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
+  private Menu pancakeHouseMenu = new PancakeHouseMenu();
 
-  private DinnerMenu dinnerMenu = new DinnerMenu();
+  private Menu dinnerMenu = new DinerMenu();
+  
+  private Menu cafeMenu = new CafeMenu();
 
   public void printMenu()
   {
+    System.out.println("Breakfast Menu: ");
     Iterator<MenuItem> breakfastIterator = pancakeHouseMenu.createIterator();
     printMenu(breakfastIterator);
-    Iterator<MenuItem> dinnerIterator = dinnerMenu.createIterator();
+    System.out.println("-------------------------------------------");
+    System.out.println("Lunch Menu: ");
+    Iterator<MenuItem> dinerIterator = dinnerMenu.createIterator();
+    printMenu(dinerIterator);
+    System.out.println("-------------------------------------------");
+    System.out.println("Dinner Menu: ");
+    Iterator<MenuItem> dinnerIterator = cafeMenu.createIterator();
     printMenu(dinnerIterator);
   }
   

@@ -1,9 +1,10 @@
 package com.jeya.iterator.objectvillerestaurant.menu;
 
-import com.jeya.iterator.objectvillerestaurant.util.DinerMenuIterator;
-import com.jeya.iterator.objectvillerestaurant.util.Iterator;
+import java.util.Iterator;
 
-public class DinnerMenu
+import com.jeya.iterator.objectvillerestaurant.util.DinerMenuIterator;
+
+public class DinerMenu implements Menu
 {
   private static final int MAX_ITEMS = 6;
 
@@ -11,7 +12,7 @@ public class DinnerMenu
 
   MenuItem[] menuItems;
 
-  public DinnerMenu()
+  public DinerMenu()
   {
     menuItems = new MenuItem[MAX_ITEMS];
     addItem("Vegetarian BLT", "(Fakin') Bacon with lettuce & tomato on whole wheat", true, 2.99);

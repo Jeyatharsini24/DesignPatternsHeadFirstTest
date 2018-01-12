@@ -1,12 +1,12 @@
 package com.jeya.iterator.objectvillerestaurant.menu;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-import com.jeya.iterator.objectvillerestaurant.util.Iterator;
 import com.jeya.iterator.objectvillerestaurant.util.PancakeHouseMenuIterator;
 
-public class PancakeHouseMenu
+public class PancakeHouseMenu implements Menu
 {
   private List<MenuItem> menuItems;
 
