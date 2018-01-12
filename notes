@@ -31,4 +31,4 @@ Facade: unified interface for subsystem : principle of least knowledge
 Eg: Home theater
 
 Template : encapsulating algorithms (subclass decides one or more part of the algorithm resides in super class) : hollywood principle - don't call us, we will call you
-Eg: Coffee or tea making
+Eg: Coffee or tea making, general sorting with comparable, Swing paint method, Applet
