@@ -34,3 +34,6 @@ rmiregistry should be run before service is up
 
 client actually calls stub's methods
 
+remote proxy: control access to a remote object : mighty gumball
+virtual proxy: control access to a resource that is expensive to create
+protection proxy: control access to a resource based on access rights
