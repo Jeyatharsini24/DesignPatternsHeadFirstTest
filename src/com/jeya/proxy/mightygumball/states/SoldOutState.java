@@ -1,10 +1,10 @@
 package com.jeya.proxy.mightygumball.states;
 
-import com.jeya.proxy.mightygumball.GumballMachine;
+import com.jeya.proxy.mightygumball.remote.GumballMachine;
 
 public class SoldOutState implements State
 {
-  private GumballMachine gumballMachine;
+  private transient GumballMachine gumballMachine; // don't serialize this
 
   public SoldOutState(GumballMachine gumballMachine)
   {

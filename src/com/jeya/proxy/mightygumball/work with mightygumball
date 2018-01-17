@@ -19,3 +19,18 @@ in one cmd "E:\For MyTest\DesignPatternsHeadFirstTest\bin>rmiregistry" : make up
 in another cmd "E:\For MyTest\DesignPatternsHeadFirstTest\bin>java com.jeya.proxy.mightygumball.remote.MainServer" : will up service
 
 in another cmd "E:\For MyTest\DesignPatternsHeadFirstTest\bin>java com.jeya.proxy.mightygumball.client.MyRemoteClient" : will invoke the method in service
+
+-----------------------------------------------------------------------------------------------------------------------
+
+"E:\For MyTest\DesignPatternsHeadFirstTest\bin>rmiregistry"
+
+"E:\For MyTest\DesignPatternsHeadFirstTest\bin>java com.jeya.proxy.mightygumball.remote.GumballMachineServer"
+
+"E:\For MyTest\DesignPatternsHeadFirstTest\bin>java com.jeya.proxy.mightygumball.client.GumballMonitorMain"
+
+-------------------------------------------------------------------------------------------------------------------------
+
+rmiregistry should be run before service is up
+
+client actually calls stub's methods
+

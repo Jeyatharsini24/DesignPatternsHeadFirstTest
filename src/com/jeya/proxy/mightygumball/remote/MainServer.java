@@ -1,9 +1,9 @@
 package com.jeya.proxy.mightygumball.remote;
 
 import java.rmi.Naming;
+import java.rmi.RemoteException;
 
-import com.jeya.proxy.mightygumball.GumballMachine;
-import com.jeya.proxy.mightygumball.GumballMonitor;
+import com.jeya.proxy.mightygumball.client.GumballMonitor;
 
 public class MainServer
 {
@@ -27,7 +27,15 @@ public class MainServer
     }
 
     count = 112;
-    GumballMachine gumballMachine = new GumballMachine("location1", count);
+    GumballMachine gumballMachine = null;
+    try
+    {
+      gumballMachine = new GumballMachine("location1", count);
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
     GumballMonitor gumballMonitor = new GumballMonitor(gumballMachine);
     gumballMonitor.report();
     

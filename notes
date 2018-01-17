@@ -42,4 +42,5 @@ Eg: Submenu in menu
 State : allows an object to alter its behavior when its internal state changes : there is a static inbuilt algorithm for changes.
 Eg: Gumball machine with state changes
 
-Proxy: client side : stub, server side : skeleton
+Proxy: placeholder for another object to control access to it
+Eg: RMI - gumball machines in network are monitored by a client(client side : stub, server side : skeleton)

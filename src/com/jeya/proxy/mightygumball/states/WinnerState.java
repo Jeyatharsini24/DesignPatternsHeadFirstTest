@@ -1,10 +1,12 @@
 package com.jeya.proxy.mightygumball.states;
 
-import com.jeya.proxy.mightygumball.GumballMachine;
+import java.rmi.RemoteException;
+
+import com.jeya.proxy.mightygumball.remote.GumballMachine;
 
 public class WinnerState implements State
 {
-  private GumballMachine gumballMachine;
+  private transient GumballMachine gumballMachine; // don't serialize this
 
   public WinnerState(GumballMachine gumballMachine)
   {
@@ -34,22 +36,29 @@ public class WinnerState implements State
   {
     System.out.println("YOU'RE A WINNER! You get two gumballs for your quarter");
     gumballMachine.releaseBall();
-    if (gumballMachine.getCount() == 0)
+    try
     {
-      gumballMachine.setState(gumballMachine.getSoldOutState());
-    }
-    else
-    {
-      gumballMachine.releaseBall();
-      if (gumballMachine.getCount() > 0)
+      if (gumballMachine.getCount() == 0)
       {
-        gumballMachine.setState(gumballMachine.getNoQuarterState());
+        gumballMachine.setState(gumballMachine.getSoldOutState());
       }
       else
       {
-        System.out.println("Oops, out of gumballs!");
-        gumballMachine.setState(gumballMachine.getSoldOutState());
+        gumballMachine.releaseBall();
+        if (gumballMachine.getCount() > 0)
+        {
+          gumballMachine.setState(gumballMachine.getNoQuarterState());
+        }
+        else
+        {
+          System.out.println("Oops, out of gumballs!");
+          gumballMachine.setState(gumballMachine.getSoldOutState());
+        }
       }
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
     }
   }
 }

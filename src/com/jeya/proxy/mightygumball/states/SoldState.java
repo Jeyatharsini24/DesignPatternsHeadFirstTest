@@ -1,10 +1,12 @@
 package com.jeya.proxy.mightygumball.states;
 
-import com.jeya.proxy.mightygumball.GumballMachine;
+import java.rmi.RemoteException;
+
+import com.jeya.proxy.mightygumball.remote.GumballMachine;
 
 public class SoldState implements State
 {
-  private GumballMachine gumballMachine;
+  private transient GumballMachine gumballMachine; // don't serialize this
 
   public SoldState(GumballMachine gumballMachine)
   {
@@ -33,14 +35,21 @@ public class SoldState implements State
   public void dispense()
   {
     gumballMachine.releaseBall();
-    if (gumballMachine.getCount() > 0)
+    try
     {
-      gumballMachine.setState(gumballMachine.getNoQuarterState());
+      if (gumballMachine.getCount() > 0)
+      {
+        gumballMachine.setState(gumballMachine.getNoQuarterState());
+      }
+      else
+      {
+        System.out.println("Oops, out of gumballs!");
+        gumballMachine.setState(gumballMachine.getSoldOutState());
+      }
     }
-    else
+    catch (RemoteException e)
     {
-      System.out.println("Oops, out of gumballs!");
-      gumballMachine.setState(gumballMachine.getSoldOutState());
+      e.printStackTrace();
     }
   }
 }

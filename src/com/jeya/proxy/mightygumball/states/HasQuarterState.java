@@ -1,12 +1,13 @@
 package com.jeya.proxy.mightygumball.states;
 
+import java.rmi.RemoteException;
 import java.util.Random;
 
-import com.jeya.proxy.mightygumball.GumballMachine;
+import com.jeya.proxy.mightygumball.remote.GumballMachine;
 
 public class HasQuarterState implements State
 {
-  private GumballMachine gumballMachine;
+  private transient GumballMachine gumballMachine; // don't serialize this
 
   private Random randomWinner = new Random(System.currentTimeMillis());
 
@@ -33,13 +34,20 @@ public class HasQuarterState implements State
   {
     System.out.println("You turned...");
     int winner = randomWinner.nextInt(10);
-    if (winner == 0 && gumballMachine.getCount() > 1)
+    try
     {
-      gumballMachine.setState(gumballMachine.getWinnerState());
+      if (winner == 0 && gumballMachine.getCount() > 1)
+      {
+        gumballMachine.setState(gumballMachine.getWinnerState());
+      }
+      else
+      {
+        gumballMachine.setState(gumballMachine.getSoldState());
+      }
     }
-    else
+    catch (RemoteException e)
     {
-      gumballMachine.setState(gumballMachine.getSoldState());
+      e.printStackTrace();
     }
   }
 

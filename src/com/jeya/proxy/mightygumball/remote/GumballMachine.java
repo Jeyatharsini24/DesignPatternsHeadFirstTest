@@ -1,4 +1,7 @@
-package com.jeya.proxy.mightygumball;
+package com.jeya.proxy.mightygumball.remote;
+
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 
 import com.jeya.proxy.mightygumball.states.HasQuarterState;
 import com.jeya.proxy.mightygumball.states.NoQuarterState;
@@ -7,7 +10,7 @@ import com.jeya.proxy.mightygumball.states.SoldState;
 import com.jeya.proxy.mightygumball.states.State;
 import com.jeya.proxy.mightygumball.states.WinnerState;
 
-public class GumballMachine
+public class GumballMachine extends UnicastRemoteObject implements GumballMachineRemote
 {
   private State soldOutState;
 
@@ -25,7 +28,7 @@ public class GumballMachine
 
   private String location;
 
-  public GumballMachine(String location, int numberOfGumballs)
+  public GumballMachine(String location, int numberOfGumballs) throws RemoteException
   {
     soldOutState = new SoldOutState(this);
     noQuarterState = new NoQuarterState(this);
@@ -95,7 +98,7 @@ public class GumballMachine
     currentState = state;
   }
 
-  public int getCount()
+  public int getCount() throws RemoteException
   {
     return count;
   }
@@ -106,12 +109,12 @@ public class GumballMachine
     currentState = noQuarterState;
   }
 
-  public String getLocation()
+  public String getLocation() throws RemoteException
   {
     return location;
   }
 
-  public State getCurrentState()
+  public State getCurrentState() throws RemoteException
   {
     return currentState;
   }
