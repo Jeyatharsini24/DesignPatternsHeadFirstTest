@@ -1,0 +1,21 @@
+E:\For MyTest\DesignPatternsHeadFirstTest\bin\com\jeya\proxy\mightygumball\remote>rmic MyRemoteImpl
+
+error: Invalid class file format in .\MyRemoteImpl.class.  The major.minor version '52.0' is too recent for this tool to understand.
+error: Class MyRemoteImpl not found.
+
+fix for 1st: in cmd
+
+path = %JAVA8%/bin
+
+(don't let to confuse with version)
+
+fix for 2nd:
+
+and now run:
+"E:\For MyTest\DesignPatternsHeadFirstTest\bin>rmic com.jeya.proxy.mightygumball.remote.MyRemoteImpl" : will generate stub
+
+in one cmd "E:\For MyTest\DesignPatternsHeadFirstTest\bin>rmiregistry" : make upcoming service available
+
+in another cmd "E:\For MyTest\DesignPatternsHeadFirstTest\bin>java com.jeya.proxy.mightygumball.remote.MainServer" : will up service
+
+in another cmd "E:\For MyTest\DesignPatternsHeadFirstTest\bin>java com.jeya.proxy.mightygumball.client.MyRemoteClient" : will invoke the method in service
