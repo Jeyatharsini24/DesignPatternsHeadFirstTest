@@ -18,13 +18,10 @@ public class ImageProxyTest
     MarkerIconInterface icon;
     try
     {
-      icon = new ImageProxy(new URL("https://cdn.pixabay.com/photo/2018/01/14/23/05/visa-3082813_960_720.jpg"));
+      icon = new ImageProxy(new URL("http://images.amazon.com/images/P/B000003S2K.01.LZZZZZZZ.jpg"));
       JLabel label = new JLabel();
-      //label.setForeground(Color.BLUE);
-      //label.setBackground(Color.PINK);
-      //label.setOpaque(true);
       label.setIcon(icon);
-      label.setPreferredSize(new Dimension(900, 700));
+      label.setPreferredSize(new Dimension(600, 500));
       JPanel p = new JPanel();
       p.setLayout(new GridLayout(1, 1));
       p.add(label);
@@ -35,7 +32,7 @@ public class ImageProxyTest
     {
       e.printStackTrace();
     }
-    frame.setSize(980, 700);
+    frame.setSize(600, 500);
     frame.setVisible(true);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
   }

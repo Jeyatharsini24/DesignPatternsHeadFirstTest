@@ -1,22 +1,31 @@
 package com.jeya.proxy.virtualproxyexampleinbook;
 
+import java.awt.Graphics;
+
 import javax.swing.Icon;
 import javax.swing.JComponent;
 
-import com.jeya.proxy.virtualproxy.ImageProxy;
-
 public class ImageComponent extends JComponent
 {
+  private Icon icon;
 
   public ImageComponent(Icon icon)
   {
-    // TODO Auto-generated constructor stub
+    this.icon = icon;
   }
 
-  public void setIcon(ImageProxy imageProxy)
+  public void setIcon(Icon imageProxy)
   {
-    // TODO Auto-generated method stub
-    
+    this.icon = imageProxy;
   }
 
+  public void paintComponent(Graphics g)
+  {
+    super.paintComponent(g);
+    int w = icon.getIconWidth();
+    int h = icon.getIconHeight();
+    int x = (800 - w) / 2;
+    int y = (600 - h) / 2;
+    icon.paintIcon(this, g, x, y);
+  }
 }
