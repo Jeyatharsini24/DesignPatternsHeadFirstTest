@@ -12,8 +12,6 @@ import javax.sound.midi.Sequencer;
 import javax.sound.midi.ShortMessage;
 import javax.sound.midi.Track;
 
-import com.jeya.compound.ducksimulator.Observable;
-
 public class BeatModel implements BeatModelInterface, MetaEventListener
 {
   private Sequencer sequencer;
@@ -189,6 +187,6 @@ public class BeatModel implements BeatModelInterface, MetaEventListener
   @Override
   public void registerObserver(BPMObserver o)
   {
-
+    bpmObservers.add(o);
   }
 }

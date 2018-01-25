@@ -1,14 +1,36 @@
 package com.jeya.compound.beat;
 
-import java.awt.Component;
+import javax.swing.JProgressBar;
 
-public class BeatBar extends Component
+public class BeatBar extends JProgressBar implements Runnable
 {
+  private JProgressBar progressBar;
 
-  public void setValue(int i)
+  private Thread thread;
+
+  public BeatBar()
   {
-    // TODO Auto-generated method stub
-    
+    thread = new Thread(this);
+    setMaximum(100);
+    thread.start();
   }
 
+  public void run()
+  {
+    for(;;)
+    {
+      int value = getValue();
+      value = (int)(value * 0.75);
+      setValue(value);
+      repaint();
+      try
+      {
+        Thread.sleep(50);
+      }
+      catch(Exception e)
+      {
+        
+      }
+    }
+  }
 }

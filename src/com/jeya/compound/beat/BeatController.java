@@ -47,7 +47,7 @@ public class BeatController implements ControllerInterface
   }
 
   @Override
-  public void decreaseBPMButton()
+  public void decreaseBPM()
   {
     int bpm = model.getBPM();
     model.setBPM(bpm - 1);

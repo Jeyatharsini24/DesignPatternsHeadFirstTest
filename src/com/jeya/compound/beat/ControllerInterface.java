@@ -10,5 +10,5 @@ public interface ControllerInterface
 
   public void increaseBPM();
 
-  public void decreaseBPMButton();
+  public void decreaseBPM();
 }
