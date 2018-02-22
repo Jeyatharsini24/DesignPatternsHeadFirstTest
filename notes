@@ -62,3 +62,5 @@ Bridge: allows to change either side of hierarchies independently. (Need to chan
 Eg: TV and remote, Separate window abstraction from window implementation for different OS (Button <<- skin(interface) <- WindowsSkin and MacSkin
 (Abstraction layer changes don't affect implementation layer and vice versa)
 Two layers of abstraction between classes and one class is dependent upon the other.
+
+Builder: to encapsulate the construction of a product and allow it to be constructed in steps.
