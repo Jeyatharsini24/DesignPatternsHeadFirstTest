@@ -64,3 +64,5 @@ Eg: TV and remote, Separate window abstraction from window implementation for di
 Two layers of abstraction between classes and one class is dependent upon the other.
 
 Builder: to encapsulate the construction of a product and allow it to be constructed in steps.
+
+Chain of responsibility : chain of objects to examine a request. Passes to successor if it can't handle the request itself.
