@@ -1,0 +1,10 @@
+1. Need a program to draw circle and triangle:
+typical approach: Shape(name, draw()) <- Circle and Rectangle
+
+2. Color of blue and red:
+Circle <- BlueCircle and RedCircle , Triangle <- Blue Triangle and Red Triangle ... wrong: 
+
+Correct: Shape(color, name, draw()) Has a IShapeColor(myColor, getShapeColor()) <- ShapeColorBlueImpl and ShapeColorRedImpl
+
+3. Green color and triangle:
+Can add more in separate hierarchies

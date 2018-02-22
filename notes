@@ -44,3 +44,21 @@ Eg: Gumball machine with state changes
 
 Proxy: placeholder for another object to control access to it
 Eg: RMI - gumball machines in network are monitored by a client(client side : stub, server side : skeleton)
+
+MVC: 
+-view is observer for model
+-controller is the strategy for the view
+-strategy means an algorithm
+-can have multiple controller for a view
+https://stackoverflow.com/questions/10064105/mvc-why-controller-is-the-strategy-for-the-view
+-view is a composite itself
+
+Pattern categories:
+1. Creational - Singleton, Builder, Prototype, Abstract Factory, Factory method
+2. Structural - Decorator, Proxy, Facade, Composite, Flyweight, Bridge, Adapter
+3. Behavioral - Mediator, Visitor, Template method, Iterator, Command, Memento, Interpreter, Observer, Chain of Responsibility, State, Strategy
+
+Bridge: allows to change either side of hierarchies independently. (Need to change not only implementation, but also abstraction)
+Eg: TV and remote, Separate window abstraction from window implementation for different OS (Button <<- skin(interface) <- WindowsSkin and MacSkin
+(Abstraction layer changes don't affect implementation layer and vice versa)
+Two layers of abstraction between classes and one class is dependent upon the other.
