@@ -65,4 +65,7 @@ Two layers of abstraction between classes and one class is dependent upon the ot
 
 Builder: to encapsulate the construction of a product and allow it to be constructed in steps.
 
-Chain of responsibility : chain of objects to examine a request. Passes to successor if it can't handle the request itself.
+Chain of responsibility : chain of objects to examine a request. Passes to successor if it can't handle the request itself. Eg: Email filter
+
+Flyweight: Many objects and all behave similar way - rather creating separate objects keep all as virtual objects with states Eg: Tree drawing
+
