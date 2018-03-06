@@ -69,3 +69,4 @@ Chain of responsibility : chain of objects to examine a request. Passes to succe
 
 Flyweight: Many objects and all behave similar way - rather creating separate objects keep all as virtual objects with states Eg: Tree drawing
 
+Interpreter: to build an interpreter for a language: Direct mapping to grammar.

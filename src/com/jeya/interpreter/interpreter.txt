@@ -1,0 +1,5 @@
+expression ::= <command> | <sequence> | <repetition>
+sequence ::= <expression> ; <expression>
+command ::= right | quack | fly
+repetition ::= while '('<variable>')' <expression>
+variable ::= [A-Z,a-z]+
