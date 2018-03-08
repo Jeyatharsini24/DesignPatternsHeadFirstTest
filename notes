@@ -70,3 +70,7 @@ Chain of responsibility : chain of objects to examine a request. Passes to succe
 Flyweight: Many objects and all behave similar way - rather creating separate objects keep all as virtual objects with states Eg: Tree drawing
 
 Interpreter: to build an interpreter for a language: Direct mapping to grammar.
+
+Mediator: Centralize the logic between components to a single system.
+
+Memento: Saving the important state of a system's key object and maintaining the key object's encapsulation
